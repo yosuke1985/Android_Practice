@@ -6,6 +6,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
+    var sheepCount = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +25,20 @@ class MainActivity : AppCompatActivity() {
         }else if (15<hour){
             greeting = "こんばんは"
         }
+
+//        val sheepNum = 10
+//        for (i in 1..sheepNum){
+//            greeting += "。。。ひつじが" + i + "匹"
+//        }
+        greeting += "ねむれへん？"
+
         textview.text = greeting
+
+        rootLayout.setOnClickListener {
+            sheepCount++
+            val sheepText = "ひつじが$sheepCount 匹"
+            textview.text = sheepText
+        }
+
     }
 }
